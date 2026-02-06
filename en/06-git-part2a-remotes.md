@@ -53,7 +53,7 @@ Now let's create a place on GitHub to store your to-do list project.
 
 | Field | What to enter |
 |-------|---------------|
-| Repository name | `my-todo-list` |
+| Repository name | `my-workshop-demo` |
 | Description | (optional) "My personal to-do list" |
 | Visibility | Public or Private — your choice |
 | Initialize this repository | **Do NOT** check any boxes (no README, no .gitignore, no license) |
@@ -67,7 +67,7 @@ Now let's create a place on GitHub to store your to-do list project.
 **Step 4:** You'll see a setup page. Find the section that says **"...or push an existing repository from the command line"**. Copy the SSH URL — it looks like:
 
 ```
-git@github.com:USERNAME/my-todo-list.git
+git@github.com:USERNAME/my-workshop-demo.git
 ```
 
 > **Note:** Replace `USERNAME` with your actual GitHub username. If you see an HTTPS URL instead (starting with `https://`), click the "SSH" button to switch.
@@ -76,16 +76,16 @@ git@github.com:USERNAME/my-todo-list.git
 
 ## 3. Connect Your Local Repo to GitHub
 
-Open iTerm2 and navigate to your `my-todo-list` folder:
+Open iTerm2 and navigate to your demo repo folder:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 Now tell git where your remote is:
 
 ```bash
-git remote add origin git@github.com:USERNAME/my-todo-list.git
+git remote add origin git@github.com:USERNAME/my-workshop-demo.git
 ```
 
 **What this means:**
@@ -107,8 +107,8 @@ git remote -v
 **Expected output:**
 
 ```
-origin	git@github.com:USERNAME/my-todo-list.git (fetch)
-origin	git@github.com:USERNAME/my-todo-list.git (push)
+origin	git@github.com:USERNAME/my-workshop-demo.git (fetch)
+origin	git@github.com:USERNAME/my-workshop-demo.git (push)
 ```
 
 **What this means:** You have a remote called `origin` with two directions — `fetch` (downloading) and `push` (uploading). Both point to your GitHub repo.
@@ -144,7 +144,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 789 bytes | 789.00 KiB/s, done.
 Total 9 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-To github.com:USERNAME/my-todo-list.git
+To github.com:USERNAME/my-workshop-demo.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 ```
@@ -152,7 +152,7 @@ branch 'main' set up to track 'origin/main'.
 **Verify it worked:**
 
 1. Go back to your browser
-2. Refresh your GitHub repository page (`github.com/USERNAME/my-todo-list`)
+2. Refresh your GitHub repository page (`github.com/USERNAME/my-workshop-demo`)
 3. You should see your files — `TODO.md`, `GOALS.md`, `SANDBOX.md` (and any other files you created)
 
 > **What just happened:** All your local snapshots are now copied to GitHub. Anyone with the link can see your project (if it's public). Your commit history is there too — click "commits" on GitHub to see it.
@@ -214,7 +214,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To github.com:USERNAME/my-todo-list.git
+To github.com:USERNAME/my-workshop-demo.git
    def5678..abc1234  main -> main
 ```
 
@@ -234,7 +234,7 @@ Let's simulate this by editing a file directly on GitHub.
 
 **Step 1: Edit a file on GitHub.com**
 
-1. Go to your repository on GitHub (`github.com/USERNAME/my-todo-list`)
+1. Go to your repository on GitHub (`github.com/USERNAME/my-workshop-demo`)
 2. Click on `TODO.md`
 3. Click the **pencil icon** (edit button) in the top-right of the file view
 4. Add a new item to the list:
@@ -273,7 +273,7 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:USERNAME/my-todo-list
+From github.com:USERNAME/my-workshop-demo
    abc1234..ghi7890  main       -> origin/main
 Updating abc1234..ghi7890
 Fast-forward

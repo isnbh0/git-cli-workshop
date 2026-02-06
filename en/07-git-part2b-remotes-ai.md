@@ -18,12 +18,12 @@ Here's how natural language maps to the remote commands you learned:
 
 | What you want | What you say to the AI | What it does |
 |---|---|---|
-| Connect to GitHub | "Connect this repo to my GitHub repo at git@github.com:USERNAME/my-todo-list.git" | `git remote add origin <URL>` |
+| Connect to GitHub | "Connect this repo to my GitHub repo at git@github.com:USERNAME/my-workshop-demo.git" | `git remote add origin <URL>` |
 | See remote connections | "Show me which remotes are connected" | `git remote -v` |
 | Upload my work | "Push my commits to GitHub" | `git push` |
 | Upload for the first time | "Push my commits to GitHub and set up tracking" | `git push -u origin main` |
 | Download latest changes | "Pull the latest changes from GitHub" | `git pull` |
-| Create a GitHub repo | "Create a new GitHub repo called my-todo-list" | `gh repo create` |
+| Create a GitHub repo | "Create a new GitHub repo called my-workshop-demo" | `gh repo create` |
 | Check if I'm up to date | "Am I in sync with GitHub?" | `git status` + `git fetch` |
 
 > **Note:** You don't have to use these exact phrases. "Upload my work", "send my changes to GitHub", and "push to origin" all work.
@@ -36,10 +36,10 @@ Let's redo the Part 2a flow using your LLM CLI tool.
 
 ### Step 1: Start your LLM CLI tool
 
-Open iTerm2, navigate to your `my-todo-list` folder, and launch your tool:
+Open iTerm2, navigate to your demo repo folder, and launch your tool:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 Then start whichever tool you installed:
@@ -64,7 +64,7 @@ The AI will run `git status` and `git remote -v` and show you the results.
 
 If you want the AI to create the GitHub repo for you:
 
-> "Create a new public GitHub repo called my-todo-list-ai and connect it to this local repo"
+> "Create a new public GitHub repo called my-workshop-demo-ai and connect it to this local repo"
 
 The AI will use `gh repo create` and `git remote add` to set everything up.
 

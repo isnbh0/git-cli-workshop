@@ -28,10 +28,10 @@ Commits A, B, C are on `main`. When you create a branch called `experiment`, com
 
 ## 1. See Your Current Branch
 
-Open iTerm2 and navigate to your `my-todo-list` folder:
+Open iTerm2 and navigate to your demo repo folder:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 Check which branch you're on:

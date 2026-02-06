@@ -53,7 +53,7 @@ https://github.com/torvalds/linux
 
 | 항목 | 입력할 내용 |
 |------|-------------|
-| Repository name | `my-todo-list` |
+| Repository name | `my-workshop-demo` |
 | Description | (선택) "My personal to-do list" |
 | Visibility | Public 또는 Private — 원하는 대로 |
 | Initialize this repository | 어떤 체크박스도 **체크하지 마세요** (README 없음, .gitignore 없음, license 없음) |
@@ -67,7 +67,7 @@ https://github.com/torvalds/linux
 **4단계:** 설정 페이지가 나타납니다. **"...or push an existing repository from the command line"** 섹션을 찾습니다. SSH URL을 복사합니다 — 다음과 같은 형태입니다:
 
 ```
-git@github.com:USERNAME/my-todo-list.git
+git@github.com:USERNAME/my-workshop-demo.git
 ```
 
 > **참고:** `USERNAME`을 여러분의 실제 GitHub 사용자 이름으로 바꾸세요. HTTPS URL(`https://`로 시작)이 보이면 "SSH" 버튼을 클릭하여 전환하세요.
@@ -76,16 +76,16 @@ git@github.com:USERNAME/my-todo-list.git
 
 ## 3. 로컬 저장소를 GitHub에 연결하기
 
-iTerm2를 열고 `my-todo-list` 폴더로 이동합니다:
+iTerm2를 열고 데모 저장소 폴더로 이동합니다:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 이제 git에게 리모트 위치를 알려줍니다:
 
 ```bash
-git remote add origin git@github.com:USERNAME/my-todo-list.git
+git remote add origin git@github.com:USERNAME/my-workshop-demo.git
 ```
 
 **각 부분의 의미:**
@@ -107,8 +107,8 @@ git remote -v
 **예상 결과:**
 
 ```
-origin	git@github.com:USERNAME/my-todo-list.git (fetch)
-origin	git@github.com:USERNAME/my-todo-list.git (push)
+origin	git@github.com:USERNAME/my-workshop-demo.git (fetch)
+origin	git@github.com:USERNAME/my-workshop-demo.git (push)
 ```
 
 **이것이 의미하는 것:** `origin`이라는 리모트가 두 방향으로 설정되어 있습니다 — `fetch` (다운로드)와 `push` (업로드). 둘 다 여러분의 GitHub 저장소를 가리킵니다.
@@ -144,7 +144,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 789 bytes | 789.00 KiB/s, done.
 Total 9 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-To github.com:USERNAME/my-todo-list.git
+To github.com:USERNAME/my-workshop-demo.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 ```
@@ -152,7 +152,7 @@ branch 'main' set up to track 'origin/main'.
 **확인 방법:**
 
 1. 브라우저로 돌아갑니다
-2. GitHub 저장소 페이지를 새로고침합니다 (`github.com/USERNAME/my-todo-list`)
+2. GitHub 저장소 페이지를 새로고침합니다 (`github.com/USERNAME/my-workshop-demo`)
 3. 파일이 보여야 합니다 — `TODO.md`, `GOALS.md`, `SANDBOX.md` (그리고 만든 다른 파일들)
 
 > **무슨 일이 있었나요:** 모든 로컬 스냅샷이 GitHub에 복사되었습니다. 링크가 있는 누구나 여러분의 프로젝트를 볼 수 있습니다 (공개인 경우). 커밋 이력도 있습니다 — GitHub에서 "commits"를 클릭하면 확인할 수 있습니다.
@@ -214,7 +214,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To github.com:USERNAME/my-todo-list.git
+To github.com:USERNAME/my-workshop-demo.git
    def5678..abc1234  main -> main
 ```
 
@@ -234,7 +234,7 @@ GitHub에서 직접 파일을 편집하여 이 상황을 만들어 봅시다.
 
 **1단계: GitHub.com에서 파일 편집하기**
 
-1. GitHub의 저장소 페이지로 이동합니다 (`github.com/USERNAME/my-todo-list`)
+1. GitHub의 저장소 페이지로 이동합니다 (`github.com/USERNAME/my-workshop-demo`)
 2. `TODO.md`를 클릭합니다
 3. 파일 보기 오른쪽 상단의 **연필 아이콘** (편집 버튼)을 클릭합니다
 4. 목록에 새 항목을 추가합니다:
@@ -273,7 +273,7 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From github.com:USERNAME/my-todo-list
+From github.com:USERNAME/my-workshop-demo
    abc1234..ghi7890  main       -> origin/main
 Updating abc1234..ghi7890
 Fast-forward

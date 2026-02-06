@@ -36,10 +36,10 @@ Let's redo the Part 3a scenario using your LLM CLI tool.
 
 ### Step 1: Start your LLM CLI tool
 
-Open iTerm2, navigate to your `my-todo-list` folder, and launch your tool:
+Open iTerm2, navigate to your demo repo folder, and launch your tool:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 Then start whichever tool you installed:

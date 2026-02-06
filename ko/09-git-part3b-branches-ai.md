@@ -36,10 +36,10 @@ LLM CLI 도구를 사용하여 Part 3a의 시나리오를 다시 해봅시다.
 
 ### 1단계: LLM CLI 도구 시작하기
 
-iTerm2를 열고 `my-todo-list` 폴더로 이동한 다음 도구를 실행합니다:
+iTerm2를 열고 데모 저장소 폴더로 이동한 다음 도구를 실행합니다:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 설치한 도구를 시작합니다:

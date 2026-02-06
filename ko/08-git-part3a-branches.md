@@ -28,10 +28,10 @@ experiment:               D --- E
 
 ## 1. 현재 브랜치 확인하기
 
-iTerm2를 열고 `my-todo-list` 폴더로 이동합니다:
+iTerm2를 열고 데모 저장소 폴더로 이동합니다:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 어떤 브랜치에 있는지 확인합니다:

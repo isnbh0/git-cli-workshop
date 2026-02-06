@@ -18,12 +18,12 @@
 
 | 하고 싶은 것 | AI에게 말하는 내용 | 실행되는 명령어 |
 |---|---|---|
-| GitHub에 연결 | "이 저장소를 git@github.com:USERNAME/my-todo-list.git에 있는 GitHub 저장소에 연결해줘" | `git remote add origin <URL>` |
+| GitHub에 연결 | "이 저장소를 git@github.com:USERNAME/my-workshop-demo.git에 있는 GitHub 저장소에 연결해줘" | `git remote add origin <URL>` |
 | 리모트 연결 확인 | "어떤 리모트가 연결되어 있는지 보여줘" | `git remote -v` |
 | 작업 업로드 | "내 커밋을 GitHub에 푸시해줘" | `git push` |
 | 처음으로 업로드 | "내 커밋을 GitHub에 푸시하고 트래킹 설정해줘" | `git push -u origin main` |
 | 최신 변경 사항 다운로드 | "GitHub에서 최신 변경 사항을 가져와줘" | `git pull` |
-| GitHub 저장소 만들기 | "my-todo-list라는 새 GitHub 저장소를 만들어줘" | `gh repo create` |
+| GitHub 저장소 만들기 | "my-workshop-demo라는 새 GitHub 저장소를 만들어줘" | `gh repo create` |
 | 최신 상태인지 확인 | "GitHub과 동기화되어 있어?" | `git status` + `git fetch` |
 
 > **참고:** 정확히 이 문구를 사용할 필요는 없습니다. "작업 올려줘", "변경 사항을 GitHub에 보내줘", "origin에 푸시해줘" 등 다 통합니다.
@@ -36,10 +36,10 @@ LLM CLI 도구를 사용하여 Part 2a의 흐름을 다시 해봅시다.
 
 ### 1단계: LLM CLI 도구 시작하기
 
-iTerm2를 열고 `my-todo-list` 폴더로 이동한 다음 도구를 실행합니다:
+iTerm2를 열고 데모 저장소 폴더로 이동한 다음 도구를 실행합니다:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 설치한 도구를 시작합니다:
@@ -64,7 +64,7 @@ AI가 `git status`와 `git remote -v`를 실행하고 결과를 보여줍니다.
 
 AI에게 GitHub 저장소를 만들어 달라고 할 수 있습니다:
 
-> "my-todo-list-ai라는 새 공개 GitHub 저장소를 만들고 이 로컬 저장소에 연결해줘"
+> "my-workshop-demo-ai라는 새 공개 GitHub 저장소를 만들고 이 로컬 저장소에 연결해줘"
 
 AI가 `gh repo create`와 `git remote add`를 사용하여 모든 것을 설정합니다.
 
