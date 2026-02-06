@@ -18,22 +18,22 @@ Let's try it.
 
 ---
 
-## 1. Create a Project Folder and Initialize Git
+## 1. Set Up Your Project and Initialize Git
 
 Open iTerm2 and type:
 
 ```bash
-mkdir my-todo-list
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
+rm -rf .git
 git init
 ```
 
-**What happens:** You create a new folder, move into it, and tell git to start watching it.
+**What happens:** You move into the demo project folder, remove the existing git history (so you can start fresh), and tell git to start watching this folder from scratch.
 
 **Expected output (from `git init`):**
 
 ```
-Initialized empty Git repository in /Users/yourname/my-todo-list/.git/
+Initialized empty Git repository in /Users/yourname/workshop/git-cli-workshop-demo/.git/
 ```
 
 **Verify it worked:**
@@ -42,16 +42,36 @@ Initialized empty Git repository in /Users/yourname/my-todo-list/.git/
 ls -la
 ```
 
-**Expected output:** You should see a `.git` folder in the list. (The `-la` flag shows hidden files — ones starting with `.`.)
+**Expected output:** You should see a `.git` folder plus the two scaffold files. (The `-la` flag shows hidden files — ones starting with `.`.)
 
 ```
-total 0
-drwxr-xr-x   3 yourname  staff   96 Jan  1 10:00 .
-drwxr-xr-x   5 yourname  staff  160 Jan  1 10:00 ..
+total 16
+drwxr-xr-x   5 yourname  staff  160 Jan  1 10:00 .
+drwxr-xr-x   4 yourname  staff  128 Jan  1 10:00 ..
 drwxr-xr-x   9 yourname  staff  288 Jan  1 10:00 .git
+-rw-r--r--   1 yourname  staff  100 Jan  1 10:00 README.md
+-rw-r--r--   1 yourname  staff  100 Jan  1 10:00 SANDBOX.md
 ```
 
 > **What's that `.git` folder?** It's where git stores all its data — your snapshots, your timeline, everything. You never need to look inside it. Just know that if this folder exists, git is active in this project.
+
+**Now commit the existing files to practice the full workflow:**
+
+```bash
+git add README.md SANDBOX.md
+git commit -m "Initial commit"
+```
+
+**Expected output:**
+
+```
+[main (root-commit) abc1234] Initial commit
+ 2 files changed, ...
+ create mode 100644 README.md
+ create mode 100644 SANDBOX.md
+```
+
+You now have a git repo with one snapshot containing the two scaffold files.
 
 ---
 
@@ -118,9 +138,6 @@ git status
 
 ```
 On branch main
-
-No commits yet
-
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	TODO.md
@@ -152,11 +169,8 @@ git status
 
 ```
 On branch main
-
-No commits yet
-
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
 	new file:   TODO.md
 ```
 
@@ -177,7 +191,7 @@ git commit -m "Add initial to-do list"
 **Expected output:**
 
 ```
-[main (root-commit) abc1234] Add initial to-do list
+[main abc1234] Add initial to-do list
  1 file changed, 5 insertions(+)
  create mode 100644 TODO.md
 ```
@@ -213,6 +227,12 @@ Author: Your Name <your@email.com>
 Date:   Wed Jan 1 10:05:00 2025 +0900
 
     Add initial to-do list
+
+commit 9876543210abcdef1234567890abcdef12345678
+Author: Your Name <your@email.com>
+Date:   Wed Jan 1 10:01:00 2025 +0900
+
+    Initial commit
 ```
 
 **What each part means:**
@@ -224,6 +244,8 @@ Date:   Wed Jan 1 10:05:00 2025 +0900
 | `Author` | Who made this snapshot (the name/email you configured) |
 | `Date` | When the snapshot was taken |
 | `Add initial to-do list` | The message you wrote with `-m` |
+
+You can see two snapshots: the "Initial commit" you made in section 1 and the to-do list you just added.
 
 > **Tip:** Press `q` to exit the log view if it fills up your screen.
 
@@ -307,7 +329,7 @@ git commit -m "Check off groceries, add reading and notes"
 
 ---
 
-## 11. View the Timeline with Two Snapshots
+## 11. View the Full Timeline
 
 ```bash
 git log
@@ -327,15 +349,22 @@ Author: Your Name <your@email.com>
 Date:   Wed Jan 1 10:05:00 2025 +0900
 
     Add initial to-do list
+
+commit 9876543210abcdef1234567890abcdef12345678
+Author: Your Name <your@email.com>
+Date:   Wed Jan 1 10:01:00 2025 +0900
+
+    Initial commit
 ```
 
-**What you're seeing:** Your timeline now has two snapshots, newest first. You can see exactly when each change was made and what it was about.
+**What you're seeing:** Your timeline now has three snapshots, newest first. You can see exactly when each change was made and what it was about.
 
 > **Tip:** For a more compact view, try `git log --oneline`:
 >
 > ```
 > def5678 Check off groceries, add reading and notes
 > abc1234 Add initial to-do list
+> 9876543 Initial commit
 > ```
 
 ---
@@ -401,15 +430,15 @@ nothing to commit, working tree clean
 
 You now know all the essential local git commands. Take 5-10 minutes to practice on your own:
 
-1. In VSCode, create a new file called `SANDBOX.md`
-2. Write whatever you want in it — notes, a story, a recipe, anything
-3. Practice the workflow:
+1. In VSCode, open the existing `SANDBOX.md` and add whatever you want — notes, a story, a recipe, anything
+2. Practice the workflow:
    - `git status` — see what changed
+   - `git diff` — see the exact changes you made
    - `git add SANDBOX.md` — stage it
    - `git commit -m "your message here"` — take a snapshot
    - `git log` — view your timeline
-4. Make more changes, then use `git diff` to see them before committing
-5. Try making a bad edit and recovering with `git restore`
+3. Make more changes, then use `git diff` to see them before committing
+4. Try making a bad edit and recovering with `git restore`
 
 ---
 

@@ -18,22 +18,22 @@ Google Docs의 버전 기록과 비슷하지만 — 문서뿐만 아니라 모�
 
 ---
 
-## 1. 프로젝트 폴더 만들고 Git 초기화하기
+## 1. 프로젝트 설정하고 Git 초기화하기
 
 iTerm2를 열고 다음을 입력하세요:
 
 ```bash
-mkdir my-todo-list
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
+rm -rf .git
 git init
 ```
 
-**어떤 일이 생기나요:** 새 폴더를 만들고, 그 안으로 이동한 다음, git에게 이 폴더를 감시하라고 알려줍니다.
+**어떤 일이 생기나요:** 데모 프로젝트 폴더로 이동하고, 기존 git 이력을 삭제(처음부터 시작하기 위해)한 다음, git에게 이 폴더를 처음부터 감시하라고 알려줍니다.
 
 **예상 결과 (`git init`):**
 
 ```
-Initialized empty Git repository in /Users/yourname/my-todo-list/.git/
+Initialized empty Git repository in /Users/yourname/workshop/git-cli-workshop-demo/.git/
 ```
 
 **확인 방법:**
@@ -42,16 +42,36 @@ Initialized empty Git repository in /Users/yourname/my-todo-list/.git/
 ls -la
 ```
 
-**예상 결과:** 목록에 `.git` 폴더가 보여야 합니다. (`-la` 플래그는 `.`으로 시작하는 숨김 파일을 보여줍니다.)
+**예상 결과:** 목록에 `.git` 폴더와 두 개의 기본 파일이 보여야 합니다. (`-la` 플래그는 `.`으로 시작하는 숨김 파일을 보여줍니다.)
 
 ```
-total 0
-drwxr-xr-x   3 yourname  staff   96 Jan  1 10:00 .
-drwxr-xr-x   5 yourname  staff  160 Jan  1 10:00 ..
+total 16
+drwxr-xr-x   5 yourname  staff  160 Jan  1 10:00 .
+drwxr-xr-x   4 yourname  staff  128 Jan  1 10:00 ..
 drwxr-xr-x   9 yourname  staff  288 Jan  1 10:00 .git
+-rw-r--r--   1 yourname  staff  100 Jan  1 10:00 README.md
+-rw-r--r--   1 yourname  staff  100 Jan  1 10:00 SANDBOX.md
 ```
 
 > **`.git` 폴더는 뭔가요?** git이 모든 데이터를 저장하는 곳입니다 — 스냅샷, 타임라인, 모든 것. 이 폴더 안을 직접 볼 필요는 없습니다. 이 폴더가 있으면 git이 이 프로젝트에서 활성화되어 있다는 것만 알면 됩니다.
+
+**기존 파일을 커밋하여 전체 워크플로우를 연습합니다:**
+
+```bash
+git add README.md SANDBOX.md
+git commit -m "Initial commit"
+```
+
+**예상 결과:**
+
+```
+[main (root-commit) abc1234] Initial commit
+ 2 files changed, ...
+ create mode 100644 README.md
+ create mode 100644 SANDBOX.md
+```
+
+이제 두 개의 기본 파일이 포함된 스냅샷 하나가 있는 git 저장소가 되었습니다.
 
 ---
 
@@ -118,9 +138,6 @@ git status
 
 ```
 On branch main
-
-No commits yet
-
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	TODO.md
@@ -152,11 +169,8 @@ git status
 
 ```
 On branch main
-
-No commits yet
-
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
 	new file:   TODO.md
 ```
 
@@ -177,7 +191,7 @@ git commit -m "Add initial to-do list"
 **예상 결과:**
 
 ```
-[main (root-commit) abc1234] Add initial to-do list
+[main abc1234] Add initial to-do list
  1 file changed, 5 insertions(+)
  create mode 100644 TODO.md
 ```
@@ -213,6 +227,12 @@ Author: Your Name <your@email.com>
 Date:   Wed Jan 1 10:05:00 2025 +0900
 
     Add initial to-do list
+
+commit 9876543210abcdef1234567890abcdef12345678
+Author: Your Name <your@email.com>
+Date:   Wed Jan 1 10:01:00 2025 +0900
+
+    Initial commit
 ```
 
 **각 부분의 의미:**
@@ -224,6 +244,8 @@ Date:   Wed Jan 1 10:05:00 2025 +0900
 | `Author` | 누가 이 스냅샷을 만들었는지 (설정한 이름/이메일) |
 | `Date` | 언제 스냅샷을 찍었는지 |
 | `Add initial to-do list` | `-m`으로 작성한 메시지 |
+
+섹션 1에서 만든 "Initial commit"과 방금 추가한 할 일 목록, 두 개의 스냅샷이 보입니다.
 
 > **팁:** 로그가 화면을 가득 채우면 `q`를 눌러 빠져나올 수 있습니다.
 
@@ -307,7 +329,7 @@ git commit -m "Check off groceries, add reading and notes"
 
 ---
 
-## 11. 두 개의 스냅샷이 있는 타임라인 보기
+## 11. 전체 타임라인 보기
 
 ```bash
 git log
@@ -327,15 +349,22 @@ Author: Your Name <your@email.com>
 Date:   Wed Jan 1 10:05:00 2025 +0900
 
     Add initial to-do list
+
+commit 9876543210abcdef1234567890abcdef12345678
+Author: Your Name <your@email.com>
+Date:   Wed Jan 1 10:01:00 2025 +0900
+
+    Initial commit
 ```
 
-**보이는 것:** 타임라인에 두 개의 스냅샷이 있으며, 최신 것이 먼저 표시됩니다. 각 변경이 언제, 어떤 내용으로 이루어졌는지 정확히 볼 수 있습니다.
+**보이는 것:** 타임라인에 세 개의 스냅샷이 있으며, 최신 것이 먼저 표시됩니다. 각 변경이 언제, 어떤 내용으로 이루어졌는지 정확히 볼 수 있습니다.
 
 > **팁:** 더 간결하게 보려면 `git log --oneline`을 사용해 보세요:
 >
 > ```
 > def5678 Check off groceries, add reading and notes
 > abc1234 Add initial to-do list
+> 9876543 Initial commit
 > ```
 
 ---
@@ -401,15 +430,15 @@ nothing to commit, working tree clean
 
 이제 로컬 git의 핵심 명령어를 모두 배웠습니다. 5-10분 동안 자유롭게 연습해 보세요:
 
-1. VSCode에서 `SANDBOX.md`라는 새 파일을 만드세요
-2. 원하는 내용을 작성하세요 — 메모, 이야기, 레시피, 무엇이든
-3. 워크플로우를 연습하세요:
+1. VSCode에서 기존 `SANDBOX.md`를 열고 원하는 내용을 추가하세요 — 메모, 이야기, 레시피, 무엇이든
+2. 워크플로우를 연습하세요:
    - `git status` — 무엇이 바뀌었는지 보기
+   - `git diff` — 정확히 어떤 내용이 바뀌었는지 보기
    - `git add SANDBOX.md` — 스테이징하기
    - `git commit -m "여기에 메시지"` — 스냅샷 찍기
    - `git log` — 타임라인 보기
-4. 더 수정한 다음, 커밋하기 전에 `git diff`로 변경 사항 확인하기
-5. 일부러 잘못된 편집을 하고 `git restore`로 복구해 보기
+3. 더 수정한 다음, 커밋하기 전에 `git diff`로 변경 사항 확인하기
+4. 일부러 잘못된 편집을 하고 `git restore`로 복구해 보기
 
 ---
 

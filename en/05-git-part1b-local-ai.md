@@ -16,10 +16,10 @@ The key insight is this: **understanding the concepts matters more than memorizi
 
 ## 2. Starting Your LLM CLI Tool
 
-Open iTerm2, navigate to your `my-todo-list` folder (the one you created in Part 1a), and launch your tool:
+Open iTerm2, navigate to your `git-cli-workshop-demo` folder (the one you used in Part 1a), and launch your tool:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 Then start whichever tool you installed:
@@ -32,7 +32,7 @@ Then start whichever tool you installed:
 
 **What happens:** The AI starts a conversation in your terminal. You can now type natural language instead of commands.
 
-> **Tip:** Make sure you're inside the `my-todo-list` folder before starting the tool. The AI works with the files in your current folder.
+> **Tip:** Make sure you're inside the `git-cli-workshop-demo` folder before starting the tool. The AI works with the files in your current folder.
 
 > **References:**
 > - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool

@@ -16,10 +16,10 @@
 
 ## 2. LLM CLI 도구 시작하기
 
-iTerm2를 열고 `my-todo-list` 폴더(Part 1a에서 만든 폴더)로 이동한 다음 도구를 실행합니다:
+iTerm2를 열고 `git-cli-workshop-demo` 폴더(Part 1a에서 사용한 폴더)로 이동한 다음 도구를 실행합니다:
 
 ```bash
-cd my-todo-list
+cd ~/workshop/git-cli-workshop-demo
 ```
 
 설치한 도구를 시작합니다:
@@ -32,7 +32,7 @@ cd my-todo-list
 
 **어떤 일이 생기나요:** 터미널에서 AI와 대화가 시작됩니다. 이제 명령어 대신 자연어를 입력할 수 있습니다.
 
-> **팁:** 도구를 시작하기 전에 `my-todo-list` 폴더 안에 있는지 확인하세요. AI는 현재 폴더의 파일을 기준으로 작동합니다.
+> **팁:** 도구를 시작하기 전에 `git-cli-workshop-demo` 폴더 안에 있는지 확인하세요. AI는 현재 폴더의 파일을 기준으로 작동합니다.
 
 > **참고:**
 > - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic의 에이전틱 코딩 도구
