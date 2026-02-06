@@ -318,5 +318,49 @@ gemini --version   # if you chose Gemini CLI
 | LLM CLI tool | Version command works |
 | iTerm2 Natural Text Editing | Option+Arrow moves by word |
 | GitHub account | Can log in at github.com |
+| Workshop repos | Cloned into `~/workshop/` |
 
 All done? You're ready for the workshop!
+
+---
+
+## 10. Workshop Setup
+
+**What this is:** Clone the workshop repos so you have all materials and a practice space ready.
+
+**Step 1: Create a workshop directory:**
+
+```bash
+mkdir ~/workshop
+cd ~/workshop
+```
+
+**Step 2: Clone the docs repo (teaching materials):**
+
+```bash
+git clone https://github.com/isnbh0/git-cli-workshop.git
+```
+
+**Step 3: Clone the demo repo (your practice playground):**
+
+```bash
+git clone https://github.com/isnbh0/git-cli-workshop-demo.git
+```
+
+**Verify it worked:**
+
+```bash
+ls ~/workshop
+```
+
+**Expected result:**
+
+```
+git-cli-workshop    git-cli-workshop-demo
+```
+
+**What you now have:**
+- `git-cli-workshop/` — Open this in your browser or VSCode to read the docs
+- `git-cli-workshop-demo/` — This is where you'll practice git commands during the workshop
+
+> **Important:** You will do all your git practice inside `git-cli-workshop-demo/`. The docs repo is for reading only.

@@ -318,5 +318,49 @@ gemini --version   # Gemini CLI를 선택한 경우
 | LLM CLI 도구 | 버전 명령어가 작동 |
 | iTerm2 자연스러운 텍스트 편집 | Option+화살표로 단어 단위 이동 |
 | GitHub 계정 | github.com에 로그인 가능 |
+| 워크숍 저장소 | `~/workshop/`에 클론 완료 |
 
 모두 완료했나요? 워크숍 준비가 끝났습니다!
+
+---
+
+## 10. 워크숍 설정
+
+**이것은:** 워크숍 저장소를 클론하여 모든 자료와 실습 공간을 준비합니다.
+
+**1단계: 워크숍 디렉토리 만들기:**
+
+```bash
+mkdir ~/workshop
+cd ~/workshop
+```
+
+**2단계: 문서 저장소 클론 (교육 자료):**
+
+```bash
+git clone https://github.com/isnbh0/git-cli-workshop.git
+```
+
+**3단계: 실습 저장소 클론 (실습 공간):**
+
+```bash
+git clone https://github.com/isnbh0/git-cli-workshop-demo.git
+```
+
+**정상 설정 확인:**
+
+```bash
+ls ~/workshop
+```
+
+**예상 결과:**
+
+```
+git-cli-workshop    git-cli-workshop-demo
+```
+
+**준비된 것:**
+- `git-cli-workshop/` — 브라우저나 VSCode에서 열어 문서를 읽으세요
+- `git-cli-workshop-demo/` — 워크숍에서 git 명령어를 연습할 공간입니다
+
+> **중요:** 모든 git 실습은 `git-cli-workshop-demo/` 안에서 합니다. 문서 저장소는 읽기 전용입니다.
