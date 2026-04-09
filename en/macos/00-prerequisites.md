@@ -219,7 +219,7 @@ claude --version
 **Install:**
 
 ```bash
-brew install codex
+brew install --cask codex
 ```
 
 **Verify it worked:**
@@ -289,43 +289,6 @@ In iTerm2, type some text, then press `Option+Left` and `Option+Right`.
 
 ---
 
-## Final Checklist
-
-Run each command below. If they all produce output (no errors), you're ready for the workshop!
-
-```bash
-xcode-select -p
-brew --version
-uv --version
-node --version
-code --version
-```
-
-Then verify your LLM CLI tool (whichever you installed):
-
-```bash
-claude --version   # if you chose Claude Code
-codex --version    # if you chose Codex
-gemini --version   # if you chose Gemini CLI
-```
-
-| Tool | Check |
-|------|-------|
-| iTerm2 | Opens and shows a prompt |
-| Xcode Command Line Tools | `xcode-select -p` shows a path |
-| Homebrew | `brew --version` shows a version |
-| uv | `uv --version` shows a version |
-| Node.js | `node --version` shows v18+ |
-| Visual Studio Code | `code --version` shows a version |
-| LLM CLI tool | Version command works |
-| iTerm2 Natural Text Editing | Option+Arrow moves by word |
-| GitHub account | Can log in at github.com |
-| Workshop repos | Cloned into `~/projects/workshop/` |
-
-All done? You're ready for the workshop!
-
----
-
 ## 10. Workshop Setup
 
 **What this is:** Clone the workshop repos so you have all materials and a practice space ready.
@@ -366,3 +329,40 @@ git-cli-workshop    git-cli-workshop-demo
 - `git-cli-workshop-demo/` — This is where you'll practice git commands during the workshop
 
 > **Important:** You will do all your git practice inside `git-cli-workshop-demo/`. The docs repo is for reading only.
+
+---
+
+## Final Checklist
+
+Run each command below. If they all produce output (no errors), you're ready for the workshop!
+
+```bash
+xcode-select -p
+brew --version
+uv --version
+node --version
+code --version
+```
+
+Then verify your LLM CLI tool (whichever you installed):
+
+```bash
+claude --version   # if you chose Claude Code
+codex --version    # if you chose Codex
+gemini --version   # if you chose Gemini CLI
+```
+
+| Tool | Check |
+|------|-------|
+| iTerm2 | Opens and shows a prompt |
+| Xcode Command Line Tools | `xcode-select -p` shows a path |
+| Homebrew | `brew --version` shows a version |
+| uv | `uv --version` shows a version |
+| Node.js | `node --version` shows v18+ |
+| Visual Studio Code | `code --version` shows a version |
+| LLM CLI tool | Version command works |
+| iTerm2 Natural Text Editing | Option+Arrow moves by word |
+| GitHub account | Can log in at github.com |
+| Workshop repos | Cloned into `~/projects/workshop/` |
+
+All done? You're ready for the workshop!

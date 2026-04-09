@@ -153,7 +153,7 @@ branch 'main' set up to track 'origin/main'.
 
 1. Go back to your browser
 2. Refresh your GitHub repository page (`github.com/USERNAME/my-workshop-demo`)
-3. You should see your files — `TODO.md`, `GOALS.md`, `SANDBOX.md` (and any other files you created)
+3. You should see your files — `TODO.md`, `SANDBOX.md`, `README.md` (and any other files you created). If you completed Part 1b, you'll also see `GOALS.md`.
 
 > **What just happened:** All your local snapshots are now copied to GitHub. Anyone with the link can see your project (if it's public). Your commit history is there too — click "commits" on GitHub to see it.
 

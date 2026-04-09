@@ -114,6 +114,8 @@ git branch
 
 ---
 
+> **Note:** Your actual file contents may differ depending on edits from prior sections. The key concepts (switching branches, committing, merging) work the same regardless of your file's exact content.
+
 ## 4. Make Changes on the Branch
 
 In VSCode, open `TODO.md` and add a new section:
@@ -159,6 +161,8 @@ git commit -m "Add stretch goals section"
 ```bash
 git log --oneline
 ```
+
+> **Note:** The exact commit messages and count may differ depending on which prior sections you completed.
 
 **Expected output:**
 

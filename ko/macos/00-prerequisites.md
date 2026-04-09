@@ -217,7 +217,7 @@ claude --version
 **설치:**
 
 ```bash
-brew install codex
+brew install --cask codex
 ```
 
 **정상 설치 확인:**
@@ -287,43 +287,6 @@ iTerm2에서 텍스트를 입력한 후 `Option+Left`와 `Option+Right`를 눌�
 
 ---
 
-## 최종 체크리스트
-
-아래 명령어를 각각 실행하세요. 모두 에러 없이 출력이 나오면 워크숍 준비 완료입니다!
-
-```bash
-xcode-select -p
-brew --version
-uv --version
-node --version
-code --version
-```
-
-설치한 LLM CLI 도구도 확인하세요:
-
-```bash
-claude --version   # Claude Code를 선택한 경우
-codex --version    # Codex를 선택한 경우
-gemini --version   # Gemini CLI를 선택한 경우
-```
-
-| 도구 | 확인 |
-|------|------|
-| iTerm2 | 열면 프롬프트가 보임 |
-| Xcode Command Line Tools | `xcode-select -p`가 경로를 표시 |
-| Homebrew | `brew --version`이 버전을 표시 |
-| uv | `uv --version`이 버전을 표시 |
-| Node.js | `node --version`이 v18 이상 표시 |
-| Visual Studio Code | `code --version`이 버전을 표시 |
-| LLM CLI 도구 | 버전 명령어가 작동 |
-| iTerm2 자연스러운 텍스트 편집 | Option+화살표로 단어 단위 이동 |
-| GitHub 계정 | github.com에 로그인 가능 |
-| 워크숍 저장소 | `~/projects/workshop/`에 클론 완료 |
-
-모두 완료했나요? 워크숍 준비가 끝났습니다!
-
----
-
 ## 10. 워크숍 설정
 
 **이것은:** 워크숍 저장소를 클론하여 모든 자료와 실습 공간을 준비합니다.
@@ -364,3 +327,40 @@ git-cli-workshop    git-cli-workshop-demo
 - `git-cli-workshop-demo/` — 워크숍에서 git 명령어를 연습할 공간입니다
 
 > **중요:** 모든 git 실습은 `git-cli-workshop-demo/` 안에서 합니다. 문서 저장소는 읽기 전용입니다.
+
+---
+
+## 최종 체크리스트
+
+아래 명령어를 각각 실행하세요. 모두 에러 없이 출력이 나오면 워크숍 준비 완료입니다!
+
+```bash
+xcode-select -p
+brew --version
+uv --version
+node --version
+code --version
+```
+
+설치한 LLM CLI 도구도 확인하세요:
+
+```bash
+claude --version   # Claude Code를 선택한 경우
+codex --version    # Codex를 선택한 경우
+gemini --version   # Gemini CLI를 선택한 경우
+```
+
+| 도구 | 확인 |
+|------|------|
+| iTerm2 | 열면 프롬프트가 보임 |
+| Xcode Command Line Tools | `xcode-select -p`가 경로를 표시 |
+| Homebrew | `brew --version`이 버전을 표시 |
+| uv | `uv --version`이 버전을 표시 |
+| Node.js | `node --version`이 v18 이상 표시 |
+| Visual Studio Code | `code --version`이 버전을 표시 |
+| LLM CLI 도구 | 버전 명령어가 작동 |
+| iTerm2 자연스러운 텍스트 편집 | Option+화살표로 단어 단위 이동 |
+| GitHub 계정 | github.com에 로그인 가능 |
+| 워크숍 저장소 | `~/projects/workshop/`에 클론 완료 |
+
+모두 완료했나요? 워크숍 준비가 끝났습니다!

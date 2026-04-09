@@ -155,7 +155,7 @@ branch 'main' set up to track 'origin/main'.
 
 1. 브라우저로 돌아갑니다
 2. GitHub 저장소 페이지를 새로고침합니다 (`github.com/USERNAME/my-workshop-demo`)
-3. 파일이 보여야 합니다 — `TODO.md`, `GOALS.md`, `SANDBOX.md` (그리고 만든 다른 파일들)
+3. 파일이 보여야 합니다 — `TODO.md`, `SANDBOX.md`, `README.md` (그리고 만든 다른 파일들). Part 1b를 완료했다면 `GOALS.md`도 보입니다.
 
 > **무슨 일이 있었나요:** 모든 로컬 스냅샷이 GitHub에 복사되었습니다. 링크가 있는 누구나 여러분의 프로젝트를 볼 수 있습니다 (공개인 경우). 커밋 이력도 있습니다 — GitHub에서 "commits"를 클릭하면 확인할 수 있습니다.
 
