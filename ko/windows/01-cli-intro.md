@@ -425,3 +425,11 @@ ls
 ---
 
 축하합니다! 이제 필수 터미널 명령어를 알게 되었습니다. 이 명령어들이 앞으로 git을 배울 때 기초가 됩니다.
+
+---
+
+## 6. 실습
+
+인터랙티브 CLI 퍼즐로 배운 내용을 연습하세요:
+
+👉 [git-cli-puzzles](https://github.com/isnbh0/git-cli-puzzles)

@@ -566,3 +566,11 @@ ls
 ---
 
 Congratulations! You now know the essential terminal commands. These same commands will be the foundation for everything we do with git.
+
+---
+
+## 6. Practice
+
+Practice what you've learned with interactive CLI puzzles:
+
+👉 [git-cli-puzzles](https://github.com/isnbh0/git-cli-puzzles)
