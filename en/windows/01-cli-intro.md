@@ -124,7 +124,7 @@ ls
 **Expected output:** A list of files and folders, something like:
 
 ```
-Desktop    Documents  Downloads  Movies  Music  Pictures
+Desktop  Documents  Downloads  Music  Pictures  Videos
 ```
 
 > **Try it yourself:** Type `ls` and press Enter. What files do you see?
@@ -251,35 +251,33 @@ ls
 
 **Expected output:** `farewell.txt` is no longer in the list.
 
-To delete a folder and everything inside it, use `rm -r`:
+To delete a folder and everything inside it, use `Remove-Item -Recurse`:
 
-```bash
-rm -r test-folder
+```powershell
+Remove-Item -Recurse test-folder
 ```
 
 > **Try it yourself:** Delete `farewell.txt` and `test-folder`. Use `ls` to confirm they're gone.
 
 ---
 
-### `less` — View file contents
+### `cat` — View file contents
 
-**What it does:** Opens a file so you can read it in the terminal.
+**What it does:** Prints the contents of a file to the terminal.
 
 **Example:**
 
-```bash
-less greeting.txt
+```powershell
+cat greeting.txt
 ```
 
-**Expected output:** The contents of the file are displayed:
+**Expected output:**
 
 ```
 Hello, terminal!
 ```
 
-**Important:** Press `q` to quit and go back to the prompt. (If you forget, you'll be stuck in the viewer!)
-
-> **Try it yourself:** View `greeting.txt` with `less`, then press `q` to exit.
+> **Try it yourself:** View `greeting.txt` with `cat`.
 
 ---
 
@@ -296,12 +294,14 @@ history
 **Expected output:** A numbered list of your recent commands:
 
 ```
-  1  ls
-  2  cd Desktop
-  3  pwd
-  4  cd ~
-  5  mkdir test-folder
-  ...
+  Id CommandLine
+  -- -----------
+   1 ls
+   2 cd Desktop
+   3 pwd
+   4 cd ~
+   5 mkdir test-folder
+   ...
 ```
 
 > **Try it yourself:** Type `history` to see everything you've done so far.
@@ -322,9 +322,9 @@ exit
 
 **Expected output:** The terminal tab closes (or shows "process completed" if it's the only tab).
 
-> **Try it yourself:** Type `exit` to close the session. (You can always open a new terminal window: `Ctrl+N` on Windows Terminal.)
+> **Try it yourself:** Type `exit` to close the session. (You can always open a new terminal window: `Ctrl+Shift+N` on Windows Terminal.)
 
-> **Reference:** For command documentation, see [PowerShell Documentation — Microsoft](https://learn.microsoft.com/en-us/powershell/). You can also type `man <command>` in the terminal (e.g. `man ls`).
+> **Reference:** For command documentation, see [PowerShell Documentation — Microsoft](https://learn.microsoft.com/en-us/powershell/). You can also type `Get-Help <command>` in the terminal (e.g. `Get-Help ls`).
 
 ---
 
@@ -364,8 +364,8 @@ notes.txt
 
 ### Step 5: View the file
 
-```bash
-less notes.txt
+```powershell
+cat notes.txt
 ```
 
 **Expected output:**
@@ -373,8 +373,6 @@ less notes.txt
 ```
 This is my practice file.
 ```
-
-Press `q` to exit.
 
 ### Step 6: Copy the file
 
@@ -410,7 +408,10 @@ rm archive.txt
 
 ```bash
 cd ..
-rm -r practice
+```
+
+```powershell
+Remove-Item -Recurse practice
 ```
 
 ### Step 11: Verify everything is cleaned up

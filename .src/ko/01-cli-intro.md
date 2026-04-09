@@ -174,9 +174,16 @@ ls
 
 **예상 결과:** 파일과 폴더 목록이 나타납니다:
 
+<!-- MACOS -->
 ```
 Desktop    Documents  Downloads  Movies  Music  Pictures
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```
+Desktop  Documents  Downloads  Music  Pictures  Videos
+```
+<!-- /WINDOWS -->
 
 > **직접 해보세요:** `ls`를 입력하고 Enter를 누르세요. 어떤 파일이 보이나요?
 
@@ -314,16 +321,26 @@ ls
 
 **예상 결과:** 목록에 `farewell.txt`가 더 이상 없습니다.
 
+<!-- MACOS -->
 폴더와 그 안의 모든 내용을 삭제하려면 `rm -r`을 사용합니다:
 
 ```bash
 rm -r test-folder
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+폴더와 그 안의 모든 내용을 삭제하려면 `Remove-Item -Recurse`를 사용합니다:
+
+```powershell
+Remove-Item -Recurse test-folder
+```
+<!-- /WINDOWS -->
 
 > **직접 해보세요:** `farewell.txt`와 `test-folder`를 삭제하세요. `ls`로 사라졌는지 확인하세요.
 
 ---
 
+<!-- MACOS -->
 ### `less` — 파일 내용 보기
 
 **하는 일:** 터미널에서 파일을 열어 읽을 수 있게 합니다.
@@ -343,6 +360,26 @@ Hello, terminal!
 **중요:** `q`를 눌러 종료하고 프롬프트로 돌아가세요. (잊으면 뷰어에 갇히게 됩니다!)
 
 > **직접 해보세요:** `less`로 `greeting.txt`를 보고 `q`를 눌러 빠져나오세요.
+<!-- /MACOS -->
+<!-- WINDOWS -->
+### `cat` — 파일 내용 보기
+
+**하는 일:** 파일의 내용을 터미널에 출력합니다.
+
+**사용 예시:**
+
+```powershell
+cat greeting.txt
+```
+
+**예상 결과:**
+
+```
+Hello, terminal!
+```
+
+> **직접 해보세요:** `cat`으로 `greeting.txt`를 확인하세요.
+<!-- /WINDOWS -->
 
 ---
 
@@ -358,6 +395,7 @@ history
 
 **예상 결과:** 번호가 매겨진 최근 명령어 목록:
 
+<!-- MACOS -->
 ```
   1  ls
   2  cd Desktop
@@ -366,6 +404,19 @@ history
   5  mkdir test-folder
   ...
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```
+  Id CommandLine
+  -- -----------
+   1 ls
+   2 cd Desktop
+   3 pwd
+   4 cd ~
+   5 mkdir test-folder
+   ...
+```
+<!-- /WINDOWS -->
 
 > **직접 해보세요:** `history`를 입력해서 지금까지 한 모든 명령어를 확인하세요.
 
@@ -385,9 +436,14 @@ exit
 
 **예상 결과:** 터미널 탭이 닫힙니다 (유일한 탭이면 "process completed"라고 표시될 수 있습니다).
 
-> **직접 해보세요:** `exit`을 입력해서 세션을 닫아 보세요. (새 터미널 창은 {{terminal_app}}에서 `{{Cmd}}+N`으로 언제든 시작할 수 있습니다.)
+> **직접 해보세요:** `exit`을 입력해서 세션을 닫아 보세요. (새 터미널 창은 {{terminal_app}}에서 `{{new_terminal}}`으로 언제든 시작할 수 있습니다.)
 
+<!-- MACOS -->
 > **참고:** 명령어 문서는 {{cli_ref}}를 참고하세요. 터미널에서 `man <명령어>`를 입력해도 됩니다 (예: `man ls`).
+<!-- /MACOS -->
+<!-- WINDOWS -->
+> **참고:** 명령어 문서는 {{cli_ref}}를 참고하세요. 터미널에서 `Get-Help <명령어>`를 입력해도 됩니다 (예: `Get-Help ls`).
+<!-- /WINDOWS -->
 
 ---
 
@@ -427,6 +483,7 @@ notes.txt
 
 ### 5단계: 파일 내용 보기
 
+<!-- MACOS -->
 ```bash
 less notes.txt
 ```
@@ -438,6 +495,18 @@ This is my practice file.
 ```
 
 `q`를 눌러 빠져나오세요.
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+cat notes.txt
+```
+
+**예상 결과:**
+
+```
+This is my practice file.
+```
+<!-- /WINDOWS -->
 
 ### 6단계: 파일 복사
 
@@ -473,8 +542,18 @@ rm archive.txt
 
 ```bash
 cd ..
+```
+
+<!-- MACOS -->
+```bash
 rm -r practice
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+Remove-Item -Recurse practice
+```
+<!-- /WINDOWS -->
 
 ### 11단계: 정리 완료 확인
 

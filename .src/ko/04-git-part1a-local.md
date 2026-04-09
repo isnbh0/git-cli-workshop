@@ -24,7 +24,20 @@ Google Docs의 버전 기록과 비슷하지만 — 문서뿐만 아니라 모�
 
 ```bash
 cd ~/projects/workshop/git-cli-workshop-demo
+```
+
+<!-- MACOS -->
+```bash
 rm -rf .git
+```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+Remove-Item -Recurse -Force .git
+```
+<!-- /WINDOWS -->
+
+```bash
 git init
 ```
 
@@ -32,12 +45,20 @@ git init
 
 **예상 결과 (`git init`):**
 
+<!-- MACOS -->
 ```
-Initialized empty Git repository in /Users/yourname/workshop/git-cli-workshop-demo/.git/
+Initialized empty Git repository in /Users/yourname/projects/workshop/git-cli-workshop-demo/.git/
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```
+Initialized empty Git repository in C:/Users/yourname/projects/workshop/git-cli-workshop-demo/.git/
+```
+<!-- /WINDOWS -->
 
 **확인 방법:**
 
+<!-- MACOS -->
 ```bash
 ls -la
 ```
@@ -52,8 +73,46 @@ drwxr-xr-x   9 yourname  staff  288 Jan  1 10:00 .git
 -rw-r--r--   1 yourname  staff  100 Jan  1 10:00 README.md
 -rw-r--r--   1 yourname  staff  100 Jan  1 10:00 SANDBOX.md
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+ls -Force
+```
+
+**예상 결과:** `.git` 폴더와 두 개의 기본 파일이 보여야 합니다. (`-Force` 플래그는 숨김 파일을 보여줍니다.)
+
+```
+    Directory: C:\Users\yourname\projects\workshop\git-cli-workshop-demo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h-          1/1/2025  10:00 AM                .git
+-a---          1/1/2025  10:00 AM            100 README.md
+-a---          1/1/2025  10:00 AM            100 SANDBOX.md
+```
+<!-- /WINDOWS -->
 
 > **`.git` 폴더는 뭔가요?** git이 모든 데이터를 저장하는 곳입니다 — 스냅샷, 타임라인, 모든 것. 이 폴더 안을 직접 볼 필요는 없습니다. 이 폴더가 있으면 git이 이 프로젝트에서 활성화되어 있다는 것만 알면 됩니다.
+
+커밋을 하기 전에, git이 누가 작업하는지 알 수 있도록 이름과 이메일을 설정합니다:
+
+```bash
+git config user.name "Your Name"
+git config user.email "your@email.com"
+```
+
+**어떤 일이 생기나요:** 출력이 없습니다 (정상입니다). Git이 이 프로젝트에 대한 설정을 저장합니다.
+
+**확인 방법:**
+
+```bash
+git config user.name
+git config user.email
+```
+
+**예상 결과:** 입력한 이름과 이메일이 출력됩니다.
+
+> **참고:** `"Your Name"`과 `"your@email.com"`을 여러분의 실제 이름과 GitHub 계정에 사용한 이메일로 바꾸세요.
 
 **기존 파일을 커밋하여 전체 워크플로우를 연습합니다:**
 
@@ -75,31 +134,7 @@ git commit -m "Initial commit"
 
 ---
 
-## 2. Git 사용자 정보 설정하기
-
-Git은 모든 스냅샷에 여러분의 이름과 이메일을 기록합니다. 설정해 봅시다:
-
-```bash
-git config user.name "Your Name"
-git config user.email "your@email.com"
-```
-
-**어떤 일이 생기나요:** 출력이 없습니다 (정상입니다). Git이 이 프로젝트에 대한 설정을 저장합니다.
-
-**확인 방법:**
-
-```bash
-git config user.name
-git config user.email
-```
-
-**예상 결과:** 입력한 이름과 이메일이 출력됩니다.
-
-> **참고:** `"Your Name"`과 `"your@email.com"`을 여러분의 실제 이름과 GitHub 계정에 사용한 이메일로 바꾸세요.
-
----
-
-## 3. 첫 번째 파일 만들기
+## 2. 첫 번째 파일 만들기
 
 프로젝트를 VSCode에서 열어봅시다:
 
@@ -126,7 +161,7 @@ VSCode에서:
 
 ---
 
-## 4. 상태 확인하기
+## 3. 상태 확인하기
 
 터미널로 돌아가서 다음을 입력하세요:
 
@@ -149,7 +184,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ---
 
-## 5. 파일 스테이징하기
+## 4. 파일 스테이징하기
 
 "스테이징"이란 다음 스냅샷에 포함할 파일을 git에게 알려주는 것입니다. 파일을 "스냅샷 바구니"에 넣는다고 생각하세요.
 
@@ -178,7 +213,7 @@ Changes to be committed:
 
 ---
 
-## 6. 스냅샷 찍기 (커밋)
+## 5. 스냅샷 찍기 (커밋)
 
 이제 실제로 스냅샷을 찍어봅시다:
 
@@ -213,7 +248,7 @@ nothing to commit, working tree clean
 
 ---
 
-## 7. 타임라인 보기
+## 6. 타임라인 보기
 
 ```bash
 git log
@@ -251,7 +286,7 @@ Date:   Wed Jan 1 10:01:00 2025 +0900
 
 ---
 
-## 8. 변경하기
+## 7. 변경하기
 
 VSCode로 돌아가서 `TODO.md`를 편집합니다. 할 일을 완료 표시하고, 새 항목을 추가하고, Notes 섹션을 만들어 봅시다:
 
@@ -273,7 +308,7 @@ Here are some things I want to remember...
 
 ---
 
-## 9. 무엇이 바뀌었는지 확인하기
+## 8. 무엇이 바뀌었는지 확인하기
 
 ```bash
 git diff
@@ -313,7 +348,7 @@ index abc1234..def5678 100644
 
 ---
 
-## 10. 다시 스테이징하고 커밋하기
+## 9. 다시 스테이징하고 커밋하기
 
 ```bash
 git add TODO.md
@@ -329,7 +364,7 @@ git commit -m "Check off groceries, add reading and notes"
 
 ---
 
-## 11. 전체 타임라인 보기
+## 10. 전체 타임라인 보기
 
 ```bash
 git log
@@ -369,7 +404,7 @@ Date:   Wed Jan 1 10:01:00 2025 +0900
 
 ---
 
-## 12. 변경 사항 되돌리기
+## 11. 변경 사항 되돌리기
 
 실수를 복구하는 연습을 해봅시다.
 
@@ -426,7 +461,7 @@ nothing to commit, working tree clean
 
 ---
 
-## 13. 자유 연습
+## 12. 자유 연습
 
 이제 로컬 git의 핵심 명령어를 모두 배웠습니다. 5-10분 동안 자유롭게 연습해 보세요:
 

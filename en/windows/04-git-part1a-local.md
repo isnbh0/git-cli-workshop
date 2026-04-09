@@ -26,7 +26,13 @@ Open your terminal and type:
 
 ```bash
 cd ~/projects/workshop/git-cli-workshop-demo
-rm -rf .git
+```
+
+```powershell
+Remove-Item -Recurse -Force .git
+```
+
+```bash
 git init
 ```
 
@@ -35,27 +41,48 @@ git init
 **Expected output (from `git init`):**
 
 ```
-Initialized empty Git repository in /Users/yourname/workshop/git-cli-workshop-demo/.git/
+Initialized empty Git repository in C:/Users/yourname/projects/workshop/git-cli-workshop-demo/.git/
 ```
 
 **Verify it worked:**
 
-```bash
-ls -la
+```powershell
+ls -Force
 ```
 
-**Expected output:** You should see a `.git` folder plus the two scaffold files. (The `-la` flag shows hidden files — ones starting with `.`.)
+**Expected output:** You should see a `.git` folder plus the two scaffold files. (The `-Force` flag shows hidden files.)
 
 ```
-total 16
-drwxr-xr-x   5 yourname  staff  160 Jan  1 10:00 .
-drwxr-xr-x   4 yourname  staff  128 Jan  1 10:00 ..
-drwxr-xr-x   9 yourname  staff  288 Jan  1 10:00 .git
--rw-r--r--   1 yourname  staff  100 Jan  1 10:00 README.md
--rw-r--r--   1 yourname  staff  100 Jan  1 10:00 SANDBOX.md
+    Directory: C:\Users\yourname\projects\workshop\git-cli-workshop-demo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h-          1/1/2025  10:00 AM                .git
+-a---          1/1/2025  10:00 AM            100 README.md
+-a---          1/1/2025  10:00 AM            100 SANDBOX.md
 ```
 
 > **What's that `.git` folder?** It's where git stores all its data — your snapshots, your timeline, everything. You never need to look inside it. Just know that if this folder exists, git is active in this project.
+
+Before making any commits, set your name and email so git knows who you are:
+
+```bash
+git config user.name "Your Name"
+git config user.email "your@email.com"
+```
+
+**What happens:** No output (that's normal). Git stores these settings for this project.
+
+**Verify it worked:**
+
+```bash
+git config user.name
+git config user.email
+```
+
+**Expected output:** Your name and email printed back to you.
+
+> **Note:** Replace `"Your Name"` and `"your@email.com"` with your actual name and the email you used for your GitHub account.
 
 **Now commit the existing files to practice the full workflow:**
 
@@ -77,31 +104,7 @@ You now have a git repo with one snapshot containing the two scaffold files.
 
 ---
 
-## 2. Configure Your Git Identity
-
-Git tags every snapshot with your name and email. Let's set those up:
-
-```bash
-git config user.name "Your Name"
-git config user.email "your@email.com"
-```
-
-**What happens:** No output (that's normal). Git stores these settings for this project.
-
-**Verify it worked:**
-
-```bash
-git config user.name
-git config user.email
-```
-
-**Expected output:** Your name and email printed back to you.
-
-> **Note:** Replace `"Your Name"` and `"your@email.com"` with your actual name and the email you used for your GitHub account.
-
----
-
-## 3. Create Your First File
+## 2. Create Your First File
 
 Open the project in VSCode:
 
@@ -128,7 +131,7 @@ In VSCode:
 
 ---
 
-## 4. Check Status
+## 3. Check Status
 
 Go back to your terminal and type:
 
@@ -151,7 +154,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ---
 
-## 5. Stage the File
+## 4. Stage the File
 
 "Staging" means telling git which files to include in the next snapshot. Think of it as placing files into a "snapshot basket."
 
@@ -180,7 +183,7 @@ Changes to be committed:
 
 ---
 
-## 6. Take the Snapshot (Commit)
+## 5. Take the Snapshot (Commit)
 
 Now let's take the actual snapshot:
 
@@ -215,7 +218,7 @@ nothing to commit, working tree clean
 
 ---
 
-## 7. View Your Timeline
+## 6. View Your Timeline
 
 ```bash
 git log
@@ -253,7 +256,7 @@ You can see two snapshots: the "Initial commit" you made in section 1 and the to
 
 ---
 
-## 8. Make Changes
+## 7. Make Changes
 
 Go back to VSCode and edit `TODO.md`. Check off a task, add a new one, and add a Notes section:
 
@@ -275,7 +278,7 @@ Press `Ctrl+S` to save.
 
 ---
 
-## 9. See What Changed
+## 8. See What Changed
 
 ```bash
 git diff
@@ -315,7 +318,7 @@ So you can see: the checkbox changed from `[ ]` to `[x]`, a new item was added, 
 
 ---
 
-## 10. Stage and Commit Again
+## 9. Stage and Commit Again
 
 ```bash
 git add TODO.md
@@ -331,7 +334,7 @@ git commit -m "Check off groceries, add reading and notes"
 
 ---
 
-## 11. View the Full Timeline
+## 10. View the Full Timeline
 
 ```bash
 git log
@@ -371,7 +374,7 @@ Date:   Wed Jan 1 10:01:00 2025 +0900
 
 ---
 
-## 12. Undo a Change
+## 11. Undo a Change
 
 Let's practice recovering from a mistake.
 
@@ -428,7 +431,7 @@ nothing to commit, working tree clean
 
 ---
 
-## 13. Freeform Practice
+## 12. Freeform Practice
 
 You now know all the essential local git commands. Take 5-10 minutes to practice on your own:
 

@@ -12,7 +12,9 @@
 
 ## 0. 사전 점검: WinGet 확인
 
-**이것은:** WinGet은 Windows의 기본 패키지 관리자입니다. macOS의 Homebrew와 동일한 역할로, 명령어 하나로 소프트웨어를 설치할 수 있게 해줍니다.
+**이것은:** WinGet은 Windows의 기본 패키지 관리자입니다. 명령어 하나로 소프트웨어를 설치할 수 있게 해주는 도구입니다.
+
+(시작 메뉴에서 'PowerShell'을 검색하세요 — 1단계에서 Windows Terminal을 설치한 뒤에는 그것을 사용합니다)
 
 PowerShell을 열고 WinGet을 사용할 수 있는지 확인합니다:
 
@@ -83,7 +85,7 @@ $PSVersionTable.PSVersion
 
 ## 3. Oh My Posh
 
-**이것은:** PowerShell 프롬프트를 꾸밀 수 있는 테마 엔진입니다. macOS의 Oh My Zsh와 유사합니다. 아이콘이 제대로 표시되려면 Nerd Font도 설치해야 합니다.\
+**이것은:** PowerShell 프롬프트를 꾸밀 수 있는 테마 엔진입니다. 아이콘이 제대로 표시되려면 Nerd Font도 설치해야 합니다.\
 **공식 출처:** [Oh My Posh — 설치](https://ohmyposh.dev/docs/installation/windows)
 
 **Oh My Posh 설치:**
@@ -135,6 +137,8 @@ oh-my-posh init pwsh | Invoke-Expression
 ```powershell
 . $PROFILE
 ```
+
+> **프로필 실행이 차단되는 경우:** `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`를 실행한 뒤 다시 시도하세요.
 
 **정상 설치 확인:** 프롬프트에 아이콘과 색상이 표시되고 기존의 `PS C:\Users\이름>` 형태가 바뀌었으면 정상입니다.
 
@@ -329,36 +333,6 @@ claude
 
 ---
 
-## 최종 체크리스트
-
-아래 명령어를 각각 실행하세요. 모두 에러 없이 출력이 나오면 워크숍 준비 완료입니다!
-
-```powershell
-$PSVersionTable.PSVersion
-oh-my-posh --version
-git --version
-node --version
-code --version
-claude --version
-claude doctor
-```
-
-| 도구 | 확인 |
-|------|------|
-| Windows Terminal | 열면 PowerShell 프롬프트가 보임 |
-| PowerShell 7 | `$PSVersionTable.PSVersion`의 Major가 7 이상 |
-| Oh My Posh | 프롬프트에 아이콘/색상 표시; `oh-my-posh --version` 작동 |
-| Git for Windows | `git --version`이 버전을 표시 |
-| GitHub 계정 | github.com에 로그인 가능 |
-| Visual Studio Code | `code --version`이 버전을 표시 |
-| Node.js | `node --version`이 v18 이상 표시 |
-| Claude Code | `claude --version` 작동; `claude doctor` 통과 |
-| 워크숍 저장소 | `~/projects/workshop/`에 클론 완료 |
-
-모두 완료했나요? 워크숍 준비가 끝났습니다!
-
----
-
 ## 10. 워크숍 설정
 
 **이것은:** 워크숍 저장소를 클론하여 모든 자료와 실습 공간을 준비합니다.
@@ -403,3 +377,33 @@ git-cli-workshop    git-cli-workshop-demo
 > **중요:** 모든 git 실습은 `git-cli-workshop-demo/` 안에서 합니다. 문서 저장소는 읽기 전용입니다.
 
 > **경로 안내:** PowerShell 7에서 `~`는 `C:\Users\사용자명`으로 확장됩니다. 워크숍 문서에서 `~/projects/workshop/git-cli-workshop-demo` 같은 경로가 나오면 Windows에서도 동일하게 작동합니다.
+
+---
+
+## 최종 체크리스트
+
+아래 명령어를 각각 실행하세요. 모두 에러 없이 출력이 나오면 워크숍 준비 완료입니다!
+
+```powershell
+$PSVersionTable.PSVersion
+oh-my-posh --version
+git --version
+node --version
+code --version
+claude --version
+claude doctor
+```
+
+| 도구 | 확인 |
+|------|------|
+| Windows Terminal | 열면 PowerShell 프롬프트가 보임 |
+| PowerShell 7 | `$PSVersionTable.PSVersion`의 Major가 7 이상 |
+| Oh My Posh | 프롬프트에 아이콘/색상 표시; `oh-my-posh --version` 작동 |
+| Git for Windows | `git --version`이 버전을 표시 |
+| GitHub 계정 | github.com에 로그인 가능 |
+| Visual Studio Code | `code --version`이 버전을 표시 |
+| Node.js | `node --version`이 v18 이상 표시 |
+| Claude Code | `claude --version` 작동; `claude doctor` 통과 |
+| 워크숍 저장소 | `~/projects/workshop/`에 클론 완료 |
+
+모두 완료했나요? 워크숍 준비가 끝났습니다!

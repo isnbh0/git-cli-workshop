@@ -327,36 +327,6 @@ Follow the prompts to sign in via your browser.
 
 ---
 
-## Final Checklist
-
-Run each command below. If they all produce output (no errors), you're ready for the workshop!
-
-```powershell
-$PSVersionTable.PSVersion
-oh-my-posh --version
-git --version
-node --version
-code --version
-claude --version
-claude doctor
-```
-
-| Tool | Check |
-|------|-------|
-| Windows Terminal | Opens and shows a PowerShell prompt |
-| PowerShell 7 | `$PSVersionTable.PSVersion` shows Major: 7+ |
-| Oh My Posh | Prompt shows icons/colors; `oh-my-posh --version` works |
-| Git for Windows | `git --version` shows a version |
-| GitHub account | Can log in at github.com |
-| Visual Studio Code | `code --version` shows a version |
-| Node.js | `node --version` shows v18+ |
-| Claude Code | `claude --version` works; `claude doctor` passes |
-| Workshop repos | Cloned into `~/projects/workshop/` |
-
-All done? You're ready for the workshop!
-
----
-
 ## 10. Workshop Setup
 
 **What this is:** Clone the workshop repos so you have all materials and a practice space ready.
@@ -401,3 +371,33 @@ git-cli-workshop    git-cli-workshop-demo
 > **Important:** You will do all your git practice inside `git-cli-workshop-demo/`. The docs repo is for reading only.
 
 > **Note on paths:** In PowerShell 7, `~` expands to `C:\Users\yourname`. When you see paths like `~/projects/workshop/git-cli-workshop-demo` in the workshop docs, they work the same way on Windows.
+
+---
+
+## Final Checklist
+
+Run each command below. If they all produce output (no errors), you're ready for the workshop!
+
+```powershell
+$PSVersionTable.PSVersion
+oh-my-posh --version
+git --version
+node --version
+code --version
+claude --version
+claude doctor
+```
+
+| Tool | Check |
+|------|-------|
+| Windows Terminal | Opens and shows a PowerShell prompt |
+| PowerShell 7 | `$PSVersionTable.PSVersion` shows Major: 7+ |
+| Oh My Posh | Prompt shows icons/colors; `oh-my-posh --version` works |
+| Git for Windows | `git --version` shows a version |
+| GitHub account | Can log in at github.com |
+| Visual Studio Code | `code --version` shows a version |
+| Node.js | `node --version` shows v18+ |
+| Claude Code | `claude --version` works; `claude doctor` passes |
+| Workshop repos | Cloned into `~/projects/workshop/` |
+
+All done? You're ready for the workshop!

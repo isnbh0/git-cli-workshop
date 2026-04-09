@@ -413,6 +413,9 @@ rm archive.txt
 
 ```bash
 cd ..
+```
+
+```bash
 rm -r practice
 ```
 

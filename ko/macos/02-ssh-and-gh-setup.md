@@ -88,7 +88,7 @@ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG... your_email@example.com
 ```
 
-출력 전체를 선택하여 복사하세요 (터미널에서 `Cmd+A` 후 `Cmd+C`, 또는 해당 줄을 트리플 클릭하여 선택).
+출력 전체를 선택하여 복사하세요 (해당 줄을 트리플 클릭하여 선택한 뒤 `Cmd+C`로 복사).
 
 ### 2단계: GitHub에 등록
 

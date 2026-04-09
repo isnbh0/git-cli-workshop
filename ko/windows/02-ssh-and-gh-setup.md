@@ -118,7 +118,9 @@ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG... your_email@example.com
 ```
 
-출력 전체를 선택하여 복사하세요 (터미널에서 `Ctrl+A` 후 `Ctrl+C`, 또는 해당 줄을 트리플 클릭하여 선택).
+출력 전체를 선택하여 복사하세요 (해당 줄을 트리플 클릭하여 선택한 뒤 `Ctrl+C`로 복사).
+
+> **팁:** 키를 바로 클립보드에 복사하려면: `Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard`
 
 ### 2단계: GitHub에 등록
 

@@ -174,9 +174,16 @@ ls
 
 **Expected output:** A list of files and folders, something like:
 
+<!-- MACOS -->
 ```
 Desktop    Documents  Downloads  Movies  Music  Pictures
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```
+Desktop  Documents  Downloads  Music  Pictures  Videos
+```
+<!-- /WINDOWS -->
 
 > **Try it yourself:** Type `ls` and press Enter. What files do you see?
 
@@ -314,16 +321,26 @@ ls
 
 **Expected output:** `farewell.txt` is no longer in the list.
 
+<!-- MACOS -->
 To delete a folder and everything inside it, use `rm -r`:
 
 ```bash
 rm -r test-folder
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+To delete a folder and everything inside it, use `Remove-Item -Recurse`:
+
+```powershell
+Remove-Item -Recurse test-folder
+```
+<!-- /WINDOWS -->
 
 > **Try it yourself:** Delete `farewell.txt` and `test-folder`. Use `ls` to confirm they're gone.
 
 ---
 
+<!-- MACOS -->
 ### `less` — View file contents
 
 **What it does:** Opens a file so you can read it in the terminal.
@@ -343,6 +360,26 @@ Hello, terminal!
 **Important:** Press `q` to quit and go back to the prompt. (If you forget, you'll be stuck in the viewer!)
 
 > **Try it yourself:** View `greeting.txt` with `less`, then press `q` to exit.
+<!-- /MACOS -->
+<!-- WINDOWS -->
+### `cat` — View file contents
+
+**What it does:** Prints the contents of a file to the terminal.
+
+**Example:**
+
+```powershell
+cat greeting.txt
+```
+
+**Expected output:**
+
+```
+Hello, terminal!
+```
+
+> **Try it yourself:** View `greeting.txt` with `cat`.
+<!-- /WINDOWS -->
 
 ---
 
@@ -358,6 +395,7 @@ history
 
 **Expected output:** A numbered list of your recent commands:
 
+<!-- MACOS -->
 ```
   1  ls
   2  cd Desktop
@@ -366,6 +404,19 @@ history
   5  mkdir test-folder
   ...
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```
+  Id CommandLine
+  -- -----------
+   1 ls
+   2 cd Desktop
+   3 pwd
+   4 cd ~
+   5 mkdir test-folder
+   ...
+```
+<!-- /WINDOWS -->
 
 > **Try it yourself:** Type `history` to see everything you've done so far.
 
@@ -385,9 +436,14 @@ exit
 
 **Expected output:** The terminal tab closes (or shows "process completed" if it's the only tab).
 
-> **Try it yourself:** Type `exit` to close the session. (You can always open a new terminal window: `{{Cmd}}+N` on {{terminal_app}}.)
+> **Try it yourself:** Type `exit` to close the session. (You can always open a new terminal window: `{{new_terminal}}` on {{terminal_app}}.)
 
+<!-- MACOS -->
 > **Reference:** For command documentation, see {{cli_ref}}. You can also type `man <command>` in the terminal (e.g. `man ls`).
+<!-- /MACOS -->
+<!-- WINDOWS -->
+> **Reference:** For command documentation, see {{cli_ref}}. You can also type `Get-Help <command>` in the terminal (e.g. `Get-Help ls`).
+<!-- /WINDOWS -->
 
 ---
 
@@ -427,6 +483,7 @@ notes.txt
 
 ### Step 5: View the file
 
+<!-- MACOS -->
 ```bash
 less notes.txt
 ```
@@ -438,6 +495,18 @@ This is my practice file.
 ```
 
 Press `q` to exit.
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+cat notes.txt
+```
+
+**Expected output:**
+
+```
+This is my practice file.
+```
+<!-- /WINDOWS -->
 
 ### Step 6: Copy the file
 
@@ -473,8 +542,18 @@ rm archive.txt
 
 ```bash
 cd ..
+```
+
+<!-- MACOS -->
+```bash
 rm -r practice
 ```
+<!-- /MACOS -->
+<!-- WINDOWS -->
+```powershell
+Remove-Item -Recurse practice
+```
+<!-- /WINDOWS -->
 
 ### Step 11: Verify everything is cleaned up
 

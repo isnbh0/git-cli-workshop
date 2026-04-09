@@ -133,7 +133,11 @@ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG... your_email@example.com
 ```
 
-Select and copy the entire output (`{{Cmd}}+A` then `{{Cmd}}+C` in the terminal, or triple-click the line to select it).
+Select and copy the output (triple-click the line to select it, then copy with `{{Cmd}}+C`).
+
+<!-- WINDOWS -->
+> **Tip:** To copy the key directly to your clipboard: `Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard`
+<!-- /WINDOWS -->
 
 ### Step 2: Add it to GitHub
 
