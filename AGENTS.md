@@ -8,7 +8,7 @@ The workshop uses two repos:
 - **This repo** (`git-cli-workshop`) — teaching docs only; participants read these
 - **Demo repo** (`git-cli-workshop-demo`) — participant playground; this is where exercises happen
 
-When docs reference participant exercises, use the demo repo directory path (`~/workshop/git-cli-workshop-demo/`).
+When docs reference participant exercises, use the demo repo directory path (`~/projects/workshop/git-cli-workshop-demo/`).
 
 ## Source-and-Build System
 
@@ -82,7 +82,7 @@ The workshop supports both macOS and Windows with fully isolated output — each
 - **Prerequisites** are separate source files per platform (no template syntax)
 - **Files 01-03** use both fences and variables for platform differences
 - **Files 04-09** use `{{Cmd}}` variable substitution only
-- **`~/workshop/git-cli-workshop-demo`** works on both platforms (PowerShell 7 expands `~`)
+- **`~/projects/workshop/git-cli-workshop-demo`** works on both platforms (PowerShell 7 expands `~`)
 
 ## Key rules
 - English is the canonical language; Korean is a translation
@@ -92,5 +92,5 @@ The workshop supports both macOS and Windows with fully isolated output — each
 - Target audience: absolute beginners with zero CLI experience
 - Every command must show: what to type, what happens, how to verify
 - Cross-repo links use absolute GitHub URLs (https://github.com/isnbh0/git-cli-workshop-demo)
-- Exercise working directory is always `~/workshop/git-cli-workshop-demo/`
+- Exercise working directory is always `~/projects/workshop/git-cli-workshop-demo/`
 - Docs repo should never contain practice/exercise files (SANDBOX.md, TODO.md, etc.)
